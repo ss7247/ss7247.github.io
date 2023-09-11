@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+         <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="content-box" id="J_Content">
+            <h2>InfiniteScroll</h2>
+            <h3>1、说明</h3>
+            <h4>1.1、示例：<a class="demo-link" href="http://m.ydui.org/html/list.infinitescroll.html" target="_blank">http://m.ydui.org/html/list.infinitescroll.html</a></h4>
+            <h4>1.2、移动端常见向上滚动自动加载数据插件。InfiniteScroll 仅支持Javascript API方式调用；</h4>
+            <h3>2、调用</h3>
+            <div class="fuck">
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>普通调用</span></strong>
+                            <div class="demo">
+                                <a target="_blank" href="http://m.ydui.org/html/list.infinitescroll.html" style="color: rgb(255, 0, 0);">点击这里查看效果</a>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>使用jQuery的deferred对象实现异步通信。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;section id="J_List"&gt;<br/>    &lt;div id="J_ListContent"&gt;&lt;/div&gt;<br/>&lt;/section&gt;<br/><br/>&lt;script&gt;<br/>    /* 通过自定义的方法获取数据【通常是需要定义变量当前第几页page，和每页请求的记录数pageSize】 */<br/>    var page = 1, pageSize = 10;<br/><br/>    $('#J_List').infiniteScroll({<br/>        pageSize: pageSize,<br/>        initLoad: true,<br/>        loadingHtml: '&lt;strong&gt;加载中...&lt;/strong&gt;', /* 当然也可以&lt;img src="../img/loading.gif" /&gt; */<br/>        loadListFn: function () {<br/>            var def = $.Deferred();<br/><br/>            /* 通过自定义的方法获取数据 */<br/>            $.ajax({<br/>                url: '/请求数据方法',<br/>                dataType: 'json',<br/>                data: { page: page, pagesize: pageSize },<br/>                success: function (ret) {<br/>                    /* 假设ret.list为后端返回的列表数组 */<br/><br/>                    /* 用你喜欢的方法将获取到的数据拼接成HTML，然后插入；*/<br/>                    /* 建议使用模板引擎，示例使用artTemplate；https://github.com/aui/artTemplate */<br/>                    var html = ret.list + '将数据拼接成html';<br/>                    $('#J_ListContent').append(html);<br/><br/>                    /* 获取数据，并插入页面后，调用resole，并传入当前获取的记录列表集合 */<br/>                    def.resolve(ret.list);<br/><br/>                    /* 页码自增1 */<br/>                    ++page;<br/>                }<br/>            });<br/><br/>            return def.promise();<br/>        }<br/>    });<br/>&lt;/script&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>进入详情页后返回列表页，定位之前位置</span></strong>
+                            <div class="demo">
+                                <a target="_blank" href="http://m.ydui.org/html/list.backposition.html" style="color: rgb(255, 0, 0);">点击这里查看效果</a>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>指定 <span>jumpLink</span> 为跳转元素，将会禁止默认跳转，</p>
+                                    <p>特别注意：拼接后的HTML每条数据应包含.J_Link和当前的页面标记data-page，例：</p>
+                                    <p>&lt;a href="跳转链接" class="J_Link" data-page="' + page + '"&gt;内容内容内容&lt;/a&gt;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;section id="J_List"&gt;<br/>    &lt;div id="J_ListContent"&gt;&lt;/div&gt;<br/>&lt;/section&gt;<br/><br/>&lt;script&gt;<br/>    var page = 1, pageSize = 10;<br/><br/>    $('#J_List').infiniteScroll({<br/>        pageSize: pageSize,<br/>        initLoad: true,<br/>        backposition: true,<br/>        jumpLink: '.J_Link',<br/>        loadListFn: function () {<br/>            var def = $.Deferred();<br/><br/>            $.ajax({<br/>                url: '/请求数据方法',<br/>                dataType: 'json',<br/>                data: { page: page, pagesize: pageSize },<br/>                success: function (ret) {<br/>                    var html = ret.list + '将数据拼接成html';<br/>                    /* 特别注意：拼接后的HTML每条数据应包含.J_Link和当前的页面标记data-page，例： */<br/>                    /* &lt;a href="跳转链接" class="J_Link" data-page="' + page + '"&gt;内容内容内容&lt;/a&gt; */<br/>                    $('#J_ListContent').append(html);<br/><br/>                    def.resolve(ret.list);<br/><br/>                    ++page;<br/>                }<br/>            });<br/><br/>            return def.promise();<br/>        },<br/>        /**<br/>         * 当前从详情页返回列表页时调用此方法<br/>         * @param listData 该次所需加载的数据集合<br/>         * @param retPage 该次加载的页码<br/>         */<br/>        loadStorageListFn: function (listData, retPage) {<br/>            var def = $.Deferred();<br/><br/>            page = retPage;<br/><br/>            var html = '';<br/>            listData.forEach(function (val) {<br/>                html += (val.list + '将数据拼接成html，格式同loadListFn方法一致');<br/>            });<br/>            $('#J_ListContent').append(html);<br/><br/>            def.resolve();<br/>            return def.promise();<br/>        }<br/>    });<br/>&lt;/script&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>3、参数</h3>
+            <div class="table">
+                <table>
+                    <thead><tr><td>参数</td><td>说明</td><td>类型</td><td>可选值</td><td>默认值</td></tr></thead>
+                    <tbody>
+                    <tr>
+                        <td>binder</td>
+                        <td>监听滚动容器，用于判断当前进度条是否位于可视区域</td>
+                        <td>Object || String（jQuery选择器）</td>
+                        <td>-</td>
+                        <td>window</td>
+                    </tr>
+                    <tr>
+                        <td>initLoad</td>
+                        <td>是否初始化加载第一屏数据</td>
+                        <td>Boolean</td>
+                        <td>-</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>pageSize</td>
+                        <td>每页请求的数据量</td>
+                        <td>Number</td>
+                        <td>-</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>loadingHtml</td>
+                        <td>加载中提示，支持HTML</td>
+                        <td>String</td>
+                        <td>-</td>
+                        <td>加载中...</td>
+                    </tr>
+                    <tr>
+                        <td>doneTxt</td>
+                        <td>加载完毕提示，支持HTML</td>
+                        <td>String</td>
+                        <td>-</td>
+                        <td>没有更多数据了</td>
+                    </tr>
+                    <tr>
+                        <td>loadListFn</td>
+                        <td>加载数据方法</td>
+                        <td>Function</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>backposition</strong></td>
+                        <td>是否从详情页返回列表页重新定位之前位置</td>
+                        <td>Boolean</td>
+                        <td>-</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td><strong>jumpLink</strong></td>
+                        <td>跳转详情页链接元素，当 <span>backposition</span> 为true时生效</td>
+                        <td>String</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>loadStorageListFn</strong></td>
+                        <td>加载SesstionStorage数据方法，当 <span>backposition</span> 为true时生效</td>
+                        <td>Function</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+<script src="../static/ydui.js"></script>
+
+</html>

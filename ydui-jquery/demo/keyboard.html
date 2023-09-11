@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+       <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="content-box" id="J_Content">
+            <h2>KeyBoard</h2>
+            <h3>1、说明</h3>
+            <h4>1.1、示例：<a class="demo-link" href="http://m.ydui.org/html/keyboard.html" target="_blank">http://m.ydui.org/html/keyboard.html</a></h4>
+            <h4>1.2、六位密码安全键盘插件；KeyBoard 仅支持Javascript API方式调用；</h4>
+            <h3>2、调用</h3>
+            <div class="fuck">
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>Javascript API 调用</span></strong>
+                            <div class="demo">
+                                <div class="demo">
+                                    <div class="m-button">
+                                        <a href="javascript:;" class="btn-block btn-primary" id="J_OpenKeyBoard">打开</a>
+                                    </div>
+
+                                    <div class="m-keyboard" id="J_KeyBoard">
+                                        <!-- 自定义内容区域 -->
+                                        <div style="text-align: right;padding: .15rem .8rem 0;"><a href="http://www.ydui.org/" style="color: #666;font-size: .24rem;">忘记密码</a></div>
+                                        <!-- 自定义内容区域 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>可在 <span>.m-keyboard</span> 容器内自定义显示内容；</p>
+                                    <p>通过 <span>[open]</span> 和 <span>[close]</span> 方法打开或关闭键盘；</p>
+                                    <p>当 <span>[done.ydui.keyboard]</span> 事件执行后返回当前输入的密码(password)。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;div class="m-button"&gt;<br/>    &lt;a href="javascript:;" class="btn-block btn-primary" id="J_OpenKeyBoard"&gt;打开&lt;/a&gt;<br/>&lt;/div&gt;<br/><br/>&lt;div class="m-keyboard" id="J_KeyBoard"&gt;<br/>    &lt;!-- 自定义内容区域 --&gt;<br/>    &lt;div style="text-align: right;padding: .15rem .8rem 0;"&gt;&lt;a href="http://www.ydui.org" style="color: #666;font-size: .24rem;"&gt;忘记密码&lt;/a&gt;&lt;/div&gt;<br/>    &lt;!-- 自定义内容区域 --&gt;<br/>&lt;/div&gt;<br/><br/>&lt;script&gt;<br/>    var $keyboard = $('#J_KeyBoard');<br/><br/>    /* 初始化参数 */<br/>    $keyboard.keyBoard({<br/>        disorder: false, /* 是否打乱数字顺序 */<br/>        title: 'YDUI安全键盘' /* 显示标题 */<br/>    });<br/><br/>    /* 打开键盘 */<br/>    $('#J_OpenKeyBoard').on('click', function () {<br/>        $keyboard.keyBoard('open');<br/>    });<br/><br/>    /* 六位密码输入完毕后执行 */<br/>    $keyboard.on('done.ydui.keyboard', function (ret) {<br/><br/>        console.log('输入的密码是：' + ret.password);<br/><br/>        YDUI.dialog.loading.open('验证支付密码');<br/>        setTimeout(function(){<br/>            /* 显示错误信息 */<br/>            YDUI.dialog.loading.close();<br/>            $keyboard.keyBoard('error', '对不起，您的支付密码不正确，请重新输入。');<br/>        }, 1500);<br/><br/>        /* 关闭键盘 */<br/>        /* $keyboard.keyBoard('close'); */<br/>    });<br/>&lt;/script&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>3、包含3个方法可用</h3>
+            <h4>3.1、open：打开键盘</h4>
+            <h4>3.2、close：关闭键盘</h4>
+            <h4>3.3、error：提示错误信息</h4>
+            <h3>4、自定义事件</h3>
+            <h4>4.1、[done.ydui.keyboard]：密码输入完毕后执行；</h4>
+
+            <h3>5、参数</h3>
+            <div class="table">
+                <table>
+                    <thead><tr><td>参数</td><td>说明</td><td>类型</td><td>可选值</td><td>默认值</td></tr></thead>
+                    <tbody>
+                    <tr>
+                        <td>disorder</td>
+                        <td>是否打乱数字键盘顺序</td>
+                        <td>Boolean</td>
+                        <td>-</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>显示标题</td>
+                        <td>String</td>
+                        <td>-</td>
+                        <td>安全键盘</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+<script src="../static/ydui.js"></script>
+
+<script>
+    var $keyboard = $('#J_KeyBoard');
+
+    /* 初始化参数 */
+    $keyboard.keyBoard({
+        disorder: false, /* 是否打乱数字顺序 */
+        title: 'YDUI安全键盘' /* 显示标题 */
+    });
+
+    /* 打开键盘 */
+    $('#J_OpenKeyBoard').on('click', function () {
+        $keyboard.keyBoard('open');
+    });
+
+    /* 六位密码输入完毕后执行 */
+    $keyboard.on('done.ydui.keyboard', function (ret) {
+
+        console.log('输入的密码是：' + ret.password);
+
+        YDUI.dialog.loading.open('验证支付密码');
+        setTimeout(function(){
+            /* 显示错误信息 */
+            YDUI.dialog.loading.close();
+            $keyboard.keyBoard('error', '对不起，您的支付密码不正确，请重新输入。');
+        }, 1500);
+
+        /* 关闭键盘 */
+        /* $keyboard.keyBoard('close'); */
+    });
+</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - docs</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+        <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="content-box" id="J_Content">
+            <h2>快速上手</h2>
+            <h3>1、开发者说</h3>
+            <h4>1.1、个人因时间、经验、能力有限，YDUI 有很多不足的地方，希望大家包容、不吝赐教；</h4>
+            <h4>1.2、有任何建议或意见您可以进行<a target="_blank" href="javascript:;">Pull Request</a>，或者给我<a target="_blank" href="javascript:; ">提问</a>，您的支持将是我继续创作的动力\(^o^)/。</h4>
+            <h3>2、准备工作</h3>
+            <h4>2.1、了解 YDUI 能做什么？</h4>
+            <p class="prams-box">扫描二维码查看</p>
+            <p><img src="https://web.archive.org/web/20181114010011im_/http://static.ydcss.com/ydui/img/qrcode.png" alt="YDUI Touch" style="margin-top: 5px;width: 150px;height:150px;margin-left: 2em;"/></p>
+            <p class="prams-box">戳 <a href="https://web.archive.org/web/20181114010011/http://m.ydui.org/" target="_blank">http://m.ydui.org</a> 查看</p>
+            <h4>2.2、预备知识</h4>
+            <p class="prams-box">使用 YDUI 之前，应该熟悉 HTML、CSS、JavaScript 以外，还应了解<strong>移动端相关特性</strong>；</p>
+            <p class="prams-box">了解rem相关知识（当然也可以通过<a target="_blank" href="/web/20181114010011/http://www.ydui.org/customize">定制 YDUI</a>，不使用rem）；</p>
+            <p class="prams-box">如果您并不了解以上预备知识，建议您先储备相关基础知识，而后再进行使用；</p>
+            <h3>3、基于jQuery</h3>
+            <h4>3.1、YDUI JS组件基于jQuery 2.0+开发；不能接受？别骂我！</h4>
+            <p class="prams-box">同时支持 jQuery 和 Zepto，真是吃力不讨好！</p>
+            <h4>3.2、先别走，YDUI 还为你提供了很多漂亮样式组件！</h4>
+            <h3>4、兼容性</h3>
+            <h4>4.2、兼容绝大多数移动端设备（兼容Android4.0+、IOS6.0+）；</h4>
+            <p class="prams-box">如果不兼容你的JJ，请在最下方留言告诉我（操作系统及版本 + 浏览器及版本）；</p>
+            <h4>4.3、采用 flexbox 布局，因低版本安卓及部分特殊浏览器不兼容flex-basis、flex-wrap、inline-flex属性，YDUI 将采取其他解决方案；</h4>
+            <h3>5、目录结构</h3>
+            <h4>5.1、获取 YDUI</h4>
+            <p class="prams-box">通过 <a target="_blank" href="/web/20181114010011/http://www.ydui.org/customize">YDUI Touch 定制</a>，定制属于自己的 YDUI，然后下载zip压缩包；</p>
+            <h4>5.2、下载包目录结构</h4>
+            <div class="import-demo">
+                <pre class="pre"><code class="hljs html">YDUI Touch<br/>&nbsp;|<br/>&nbsp;|-- build          // 代码已压缩<br/>&nbsp;|   |-- css<br/>&nbsp;|   |   |-- ydui.css          // 已将图标.ttf转base64<br/>&nbsp;|   |-- js<br/>&nbsp;|       |-- ydui.flexible.js<br/>&nbsp;|       |-- ydui.js<br/>&nbsp;|<br/>&nbsp;|-- demo          // 所有示例文件<br/>&nbsp;|   |-- css<br/>&nbsp;|   |   |-- demo.css          // 示例用到的样式（项目无需使用）<br/>&nbsp;|   |   |-- ydui.css<br/>&nbsp;|   |-- html<br/>&nbsp;|       |-- *.html<br/>&nbsp;|   |-- js<br/>&nbsp;|       |-- ydui.flexible.js<br/>&nbsp;|       |-- ydui.js<br/>&nbsp;|   |-- index.html          // 示例入口文件</code></pre>
+            </div>
+            <h3>6、使用</h3>
+            <h4>6.1、获取到 YDUI 后，在<span class="s-code">head标签内</span>引入<span class="s-code">path/build/css/ydui.css</span>和<span class="s-code">path/build/js/ydui.flexible.js</span>文件；</h4>
+            <h4>6.2、凡涉及js组件需另外引入<span class="s-code">jquery 2.0+</span>和<span class="s-code">path/build/js/ydui.js</span>；</h4>
+            <h4>6.3、您可以复制下面代码或<a target="_blank" href="demo/begin.html">在线预览</a>。</h4>
+            <div class="import-demo">
+                <pre class="pre"><code class="hljs html">&lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>    &lt;meta charset="UTF-8"&gt;<br/>    &lt;title&gt;&lt;/title&gt;<br/>    &lt;meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" /&gt;<br/>    &lt;meta content="yes" name="apple-mobile-web-app-capable" /&gt;<br/>    &lt;meta content="black" name="apple-mobile-web-app-status-bar-style" /&gt;<br/>    &lt;meta content="telephone=no" name="format-detection" /&gt;<br/>    &lt;!-- 引入YDUI样式 --&gt;<br/>    &lt;link rel="stylesheet" href="path/build/css/ydui.css" /&gt;<br/>    &lt;!-- 引入YDUI自适应解决方案类库 --&gt;<br/>    &lt;script src="path/build/js/ydui.flexible.js"&gt;&lt;/script&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;div class="g-view"&gt;<br/>    &lt;!-- 使用：样式模块以按钮为例 --&gt;<br/>    &lt;div class="m-button"&gt;<br/>        &lt;a href="javascript:;" class="btn-block btn-primary" id="J_Btn"&gt;Button&lt;/a&gt;<br/>    &lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;!-- 引入jQuery 2.0+ --&gt;<br/>&lt;script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"&gt;&lt;/script&gt;<br/>&lt;!-- 引入YDUI脚本 --&gt;<br/>&lt;script src="path/build/js/ydui.js"&gt;&lt;/script&gt;<br/>&lt;script&gt;<br/>    !function ($) {<br/>        $('#J_Btn').on('click', function () {<br/>            /* 使用：js模块以dialog为例 */<br/>            YDUI.dialog.alert('我有一个小毛驴我从来也不骑！');<br/>        });<br/>    }(jQuery);<br/>&lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+
+
+<script src="../static/ydui.js"></script>
+</body>
+</html>
+

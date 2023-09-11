@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+         <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="content-box" id="J_Content">
+            <h2>Rem 自适应类 <em>ydui.flexible.js</em></h2>
+            <h3>1、注意！！！</h3>
+            <h4>1、文字较多，看前请喝水；</h4>
+            <h3>2、rem是什么？</h3>
+            <h4>2.1、rem (font size of the root element) 是相对根元素<span class="s-code">&lt;html&gt;</span>的字体大小变化而变化的css单位，实现强大的屏幕适配布局是它的优势；</h4>
+            <p class="prams-box">所以不同屏幕大小的终端，它的根元素<span class="s-code">&lt;html&gt;</span>的字体大小是需要相应变化的，一般有JS控制或者media query控制两种方式；</p>
+            <p class="prams-box">本文不考虑media query方式，因为Android太多分辨率了，嗯~ 不说了...</p>
+            <h4>2.2、既然 rem 是一个css单位，编写样式的时肯定得将设计图中的px转为rem，怎么转换取决于你的脚本怎么控制，于是有了本文；</h4>
+            <h3>3、需要解决的问题</h3>
+            <h4>3.1、如何根据不同大小的屏幕修改根元素<span class="s-code">&lt;html&gt;</span>的字体大小？</h4>
+            <h4>3.2、写样式时，如何将设计MM给的图轻松转换为css需要的rem？</h4>
+            <h3>4、解决方案</h3>
+            <h4>4.1、ydui.flexible.js 是处理移动端 rem 自适应(可伸缩布局方案)的类库，无须第三方工具(如Sass/Less方法、Gulp、Sublime插件)，轻松口算设计稿对应rem值；</h4>
+            <h4>4.2、ydui.flexible.js 源码：</h4>
+            <div class="import-demo">
+                <pre class="pre"><code class="hljs javascript:;">/**<br/> * YDUI 可伸缩布局方案<br/> * rem计算方式：设计图尺寸px / 100 = 实际rem  例: 100px = 1rem<br/> */<br/>!function (window) {<br/><br/>    /* 设计图文档宽度 */<br/>    var docWidth = 750;<br/><br/>    var doc = window.document,<br/>        docEl = doc.documentElement,<br/>        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';<br/><br/>    var recalc = (function refreshRem () {<br/>        var clientWidth = docEl.getBoundingClientRect().width;<br/><br/>        /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */<br/>        docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';<br/><br/>        return refreshRem;<br/>    })();<br/><br/>    /* 添加倍屏标识，安卓为1 */<br/>    docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);<br/><br/>    if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {<br/>        /* 添加IOS标识 */<br/>        doc.documentElement.classList.add('ios');<br/>        /* IOS8以上给html添加hairline样式，以便特殊处理 */<br/>        if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) &gt;= 8)<br/>            doc.documentElement.classList.add('hairline');<br/>    }<br/><br/>    if (!doc.addEventListener) return;<br/>    window.addEventListener(resizeEvt, recalc, false);<br/>    doc.addEventListener('DOMContentLoaded', recalc, false);<br/><br/>}(window);</code></pre>
+            </div>
+            <h3>5、啰嗦几句</h3>
+            <h4>5.1、ydui.flexible.js 简单粗暴，建议对需要响应页面大小的任何元素都使用 rem 作为单位来定义 (除第六点注明的一些CSS属性外)；</h4>
+            <p class="prams-box">啊啊啊，那字体字号不是会出现13、15px啦？那不是很奇葩？立马掏出我的测试JJ看看，嗯~还是非常美好的！</p>
+            <h4>5.2、对于倍图，争议较多，因为如果要做到对应倍图的话，意味着图片都需要做三份，成本太高了，所以只取2倍图；</h4>
+            <p class="prams-box">实在是非常低成本还原的方案，未尝不可；</p>
+            <p class="prams-box">当然也提供了data-dpr标识；</p>
+            <h4>5.3、写死viewport，采用scale=1.0，IOS和安卓一视同仁；</h4>
+            <p class="prams-box">实际使用时，百度地图或者第三方地图也是不支持高清方案的；</p>
+            <p class="prams-box">处理1像素边框采用<span class="s-code">transform: scale(0.5);</span>方式缩小，IOS8及以上直接使用0.5px边框；</p>
+            <h4>5.4、图标方面，单色图标尽量使用<span class="s-code">字体图标</span>；多色图标使用<span class="s-code">单张图片</span>，不使用雪碧图 (也没发现淘宝触屏版哪里用了雪碧图^_^)；</h4>
+            <h4>5.5、对于<span class="s-code">大于320px且小于420px</span>宽度的设备<span style="text-decoration: underline;">进行等比缩放</span>，其他宽度的设备<span style="text-decoration: underline;">不做缩放处理</span>；</h4>
+            <p class="prams-box">若未设置页面最大宽和最小宽，字体过大或过小会导致页面丑陋，比如在pad或PC上，但实际手机尺寸也不会过大或过小；</p>
+            <h3>6、使用方法</h3>
+            <h4>6.1、在所有资源前加载<span class="s-code">ydui.flexible.js</span>；</h4>
+            <h4>6.2、把视觉稿中的px转换成rem；</h4>
+            <p class="prams-box">rem计算方式：<span class="s-code">设计图尺寸px / 100 = 实际rem</span> 例: 100px = 1rem，32px = 0.32rem；</p>
+            <h4>6.3、无论设计图什么尺寸，算法一致。但需修改<span class="s-code">ydui.flexible.js</span>中<span class="s-code">docWidth</span>变量为设计图宽度；默认设计图文档宽度为750px；</h4>
+            <h3>7、一些不使用rem的CSS属性</h3>
+            <h4>7.1、包括但不限于：<span class="s-code">border-width</span>、<span class="s-code">border-radius</span>、<span class="s-code">box-shadow</span>、<span class="s-code">transform</span>、<span class="s-code">background-size</span></h4>
+            <h3>8、与淘宝lib-flexible的区别</h3>
+            <h4>8.1、计算方面，淘宝把视觉稿分成100份来看待，为了以后兼容vh，vw单位，但是计算相对麻烦；</h4>
+            <p class="prams-box">例如：设计图文档宽度为750px，按钮高度为80px，对应rem则为 80 / 75 ≈ 1.0666666667rem，不借助第三方工具的话，计算还是有一定难度；</p>
+            <h4>8.2、处理字号方面，淘宝不推荐用rem作为字号单位，配合用data-dpr属性来区分不同dpr下的字体大小，但手写这些差异肯定不现实，得依赖第三方工具；</h4>
+            <p class="prams-box">来自<a href="https://github.com/amfe/lib-flexible" target="_blank">淘宝lib-flexible</a>：“针对OS 9_3的UA，做临时处理，强制dpr为1，即scale也为1，虽然牺牲了这些版本上的高清方案，但是也只能这么处理了”；</p>
+            <h4>8.3、采用动态修改viewport中scale的值达到缩放效果，但在PC上浏览就会出现轻度模糊；</h4>
+            <p class="prams-box">你有病啊？不是移动端开发么？但个人调试代码还是在PC上，强迫症患者难受啊！</p>
+            <h3>9、总结</h3>
+            <h4>9.1、编写样式时，只需将设计MM给的图中各元素 px 除以 100得到rem写进你的样式文件里即可；</h4>
+            <p class="prams-box">前提需保证ydui.flexible.js中<span class="s-code">docWidth</span>变量与设计图宽度一致；</p>
+            <h4>9.2、以上纯属个人观点，如有错误，欢迎指正。Date：2016/03/05</h4>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+
+<script src="../static/ydui.js"></script>
+
+</html>

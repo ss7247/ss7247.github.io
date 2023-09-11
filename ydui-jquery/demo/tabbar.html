@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+         <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="content-box" id="J_Content">
+            <h2>Tabbar</h2>
+            <h3>1、说明</h3>
+            <h4>1.1、示例：<a class="demo-link" href="http://m.ydui.org/html/tabbar.html" target="_blank">http://m.ydui.org/html/tabbar.html</a></h4>
+            <h4>1.2、移动端常见固定于底部的导航栏；</h4>
+            <h3>2、调用</h3>
+            <div class="fuck cell-demo">
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>普通按钮</span></strong>
+                            <div class="demo">
+                                <footer class="m-tabbar">
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-home-outline"></i>
+                                        </span>
+                                        <span class="tabbar-txt">首页</span>
+                                    </a>
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-shopcart-outline"></i>
+                                        </span>
+                                        <span class="tabbar-txt">购物车</span>
+                                    </a>
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-ucenter-outline"></i>
+                                        </span>
+                                        <span class="tabbar-txt">个人中心</span>
+                                    </a>
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <img src="http://static.ydcss.com/ydui/img/logo.png">
+                                        </span>
+                                        <span class="tabbar-txt">图片</span>
+                                    </a>
+                                </footer>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>Tabbar基于Flexbox弹性布局，导航个数无限定；</p>
+                                    <p>若为 <span>fixed定位</span> 导航，则需在 <span>.m-tabbbar</span> 上添加 <span>.tabbar-fixed</span> 即可。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;footer class="m-tabbar"&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-home-outline"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;首页&lt;/span&gt;<br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-shopcart-outline"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;购物车&lt;/span&gt;<br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-ucenter-outline"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;个人中心&lt;/span&gt;<br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;img src="//static.ydcss.com/ydui/img/logo.png"&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;图片&lt;/span&gt;<br/>    &lt;/a&gt;<br/>&lt;/footer&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>添加高亮</span></strong>
+                            <div class="demo">
+                                <footer class="m-tabbar">
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-home-outline"></i>
+                                        </span>
+                                        <span class="tabbar-txt">首页</span>
+                                    </a>
+                                    <a href="#" class="tabbar-item tabbar-active">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-shopcart"></i>
+                                        </span>
+                                        <span class="tabbar-txt">购物车</span>
+                                    </a>
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-ucenter-outline"></i>
+                                        </span>
+                                        <span class="tabbar-txt">个人中心</span>
+                                    </a>
+                                </footer>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>在所需添加高亮的<span>.tabbar-item</span>上添加 <span>.tabbar-active</span>即可。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;footer class="m-tabbar"&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-home-outline"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;首页&lt;/span&gt;<br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item tabbar-active"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-shopcart"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;购物车&lt;/span&gt;<br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-ucenter-outline"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;个人中心&lt;/span&gt;<br/>    &lt;/a&gt;<br/>&lt;/footer&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>添加未读消息</span></strong>
+                            <div class="demo">
+                                <footer class="m-tabbar">
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-home-outline"></i>
+                                        </span>
+                                        <span class="tabbar-txt">首页</span>
+                                    </a>
+                                    <a href="#" class="tabbar-item">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-shopcart-outline"></i>
+                                            <span class="tabbar-dot"></span>
+                                        </span>
+                                        <span class="tabbar-txt">购物车</span>
+
+                                    </a>
+                                    <a href="#" class="tabbar-item tabbar-active">
+                                        <span class="tabbar-icon">
+                                            <i class="icon-ucenter"></i>
+                                            <span class="badge badge-danger">2</span>
+                                        </span>
+                                        <span class="tabbar-txt">个人中心</span>
+                                    </a>
+                                </footer>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>在 <span>.tabbar-icon</span> 元素内添加 <span>&lt;span class="tabbar-dot"&gt;&lt;/span&gt;</span> 或 <span>&lt;span class="badge badge-danger"&gt;2&lt;/span&gt;</span> 即可。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;footer class="m-tabbar"&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-home-outline"&gt;&lt;/i&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;首页&lt;/span&gt;<br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-shopcart-outline"&gt;&lt;/i&gt;<br/>            &lt;span class="tabbar-dot"&gt;&lt;/span&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;购物车&lt;/span&gt;<br/><br/>    &lt;/a&gt;<br/>    &lt;a href="#" class="tabbar-item tabbar-active"&gt;<br/>        &lt;span class="tabbar-icon"&gt;<br/>            &lt;i class="icon-ucenter"&gt;&lt;/i&gt;<br/>            &lt;span class="badge badge-danger"&gt;2&lt;/span&gt;<br/>        &lt;/span&gt;<br/>        &lt;span class="tabbar-txt"&gt;个人中心&lt;/span&gt;<br/>    &lt;/a&gt;<br/>&lt;/footer&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>3、专属定制</h3>
+            <h4>3.1、底部导航栏的字体颜色、背景颜色、图标默认颜色、图标选中颜色等都可以通过<a href="/web/20181030005847/http://www.ydui.org/customize" target="_blank" style="font-size:inherit;margin-left: 0;">这里</a>定制；</h4>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+
+
+<script src="../static/ydui.js"></script>
+
+</html>

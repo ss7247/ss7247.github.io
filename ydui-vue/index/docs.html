@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>一只基于Vue2.x的移动端&微信UI。 -YDUI Touch</title>
+    <meta name="description" content="基于Vue2.js 的移动端&微信UI。YDUI Touch专为移动端打造，在技术实现、交互设计上兼容主流移动设备，保证代码轻、性能高；使用 Flexbox 技术，灵活自如地对齐、收缩、扩展元素，轻松搞定移动页面布局；用 rem 实现强大的屏幕适配布局，等比例适配所有屏幕；">
+    <meta name="keywords" content="Vue2,Vue.js,Vue2.js,Vue Components,Vue2 UI,YDUI Touch">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/ico" href="../img/favicon.ico"/>
+    <link rel="stylesheet" href="../docs/docs.css?rev=4bcc3c9fa53ecdbbc83c08946ec1fc5f">
+    <script>
+        !function (window) {
+            var docWidth = 750;
+            var doc = window.document,
+                    docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            var recalc = (function refreshRem() {
+                var clientWidth = docEl.getBoundingClientRect().width;
+                docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 10), 8.55) * 5 + 'px';
+                return refreshRem;
+            })();
+            if (!doc.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        }(window);
+    </script>
+</head>
+<body>
+<div id="app"></div>
+<script src="../docs/vendors.js"></script>
+<script src="../docs/docs.js?rev=5ccdeff0f2bb21b22c446da11d2a59e4"></script>
+</body>
+</html>

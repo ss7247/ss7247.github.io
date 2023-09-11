@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+         <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+        <div class="content-box" id="J_Content">
+            <h2>Icons</h2>
+            <h3>1、说明</h3>
+            <h4>1.1、示例：<a class="demo-link" href="http://m.ydui.org/html/icons.html" target="_blank">http://m.ydui.org/html/icons.html</a></h4>
+            <h4>1.2、webapp开发时常用的字体图标；各图标大小均已调整为同等大小；</h4>
+            <h4>1.3、阿里妈妈iconfont地址：<a class="demo-link" href="http://www.iconfont.cn/collections/show/766" target="_blank">http://www.iconfont.cn/collections/show/766</a></h4>
+            <h3>2、使用</h3>
+            <div class="fuck">
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>调用图标</span></strong>
+                            <div class="demo">
+                                <div style="font-size: 26px;paddding: 10px 0;color:#FF685D;">
+                                    <i class="icon-home"></i>
+                                    <i class="icon-home-outline"></i>
+                                    <i class="icon-shopcart"></i>
+                                    <i class="icon-shopcart-outline"></i>
+                                    <i class="icon-ucenter"></i>
+                                    <i class="icon-ucenter-outline"></i>
+                                </div>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>图标均采用伪类:before添加，在标签上添加对应class <span>[.icon-名称]</span> 即可；</p>
+                                    <p>图标大小和颜色均继承父级。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;div style="font-size: 26px;color:#FF685D;"&gt;<br/>    &lt;i class="icon-home"&gt;&lt;/i&gt;<br/>    &lt;i class="icon-home-outline"&gt;&lt;/i&gt;<br/>    &lt;i class="icon-shopcart"&gt;&lt;/i&gt;<br/>    &lt;i class="icon-shopcart-outline"&gt;&lt;/i&gt;<br/>    &lt;i class="icon-ucenter"&gt;&lt;/i&gt;<br/>    &lt;i class="icon-ucenter-outline"&gt;&lt;/i&gt;<br/>&lt;/div&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="prams-box">注意：样式名 <span>[class^="icon-"]:before, [class*=" icon-"]:before</span> 已默认引入字体图标，其他样式命名时需注意。</p>
+            <h3>3、图标集合</h3>
+            <div class="fuck-icon">
+                <p>点击下面的图标即可直接复制组件代码</p>
+                <ul class="m-grids-5" id="J_Icons">
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-home"></i>
+                        </div>
+                        <div class="grids-txt">home</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-home-outline"></i>
+                        </div>
+                        <div class="grids-txt">home-outline</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-shopcart"></i>
+                        </div>
+                        <div class="grids-txt">shopcart</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-shopcart-outline"></i>
+                        </div>
+                        <div class="grids-txt">shopcart-outline</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-ucenter"></i>
+                        </div>
+                        <div class="grids-txt">ucenter</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-ucenter-outline"></i>
+                        </div>
+                        <div class="grids-txt">ucenter-outline</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-star"></i>
+                        </div>
+                        <div class="grids-txt">star</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-star-outline"></i>
+                        </div>
+                        <div class="grids-txt">star-outline</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-error"></i>
+                        </div>
+                        <div class="grids-txt">error</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-error-outline"></i>
+                        </div>
+                        <div class="grids-txt">error-outline</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-warn"></i>
+                        </div>
+                        <div class="grids-txt">warn</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-warn-outline"></i>
+                        </div>
+                        <div class="grids-txt">warn-outline</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-shield"></i>
+                        </div>
+                        <div class="grids-txt">shield</div>
+                    </a>
+                    <a href="javascript:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-shield-outline"></i>
+                        </div>
+                        <div class="grids-txt">shield-outline</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-like"></i>
+                        </div>
+                        <div class="grids-txt">like</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-like-outline"></i>
+                        </div>
+                        <div class="grids-txt">like-outline</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-weibo"></i>
+                        </div>
+                        <div class="grids-txt">weibo</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-weixin"></i>
+                        </div>
+                        <div class="grids-txt">weixin</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-tencent-weibo"></i>
+                        </div>
+                        <div class="grids-txt">tencent-weibo</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-qq"></i>
+                        </div>
+                        <div class="grids-txt">qq</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-phone1"></i>
+                        </div>
+                        <div class="grids-txt">phone1</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-phone2"></i>
+                        </div>
+                        <div class="grids-txt">phone2</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-phone3"></i>
+                        </div>
+                        <div class="grids-txt">phone3</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-share1"></i>
+                        </div>
+                        <div class="grids-txt">share1</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-share2"></i>
+                        </div>
+                        <div class="grids-txt">share2</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-share3"></i>
+                        </div>
+                        <div class="grids-txt">share3</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-order"></i>
+                        </div>
+                        <div class="grids-txt">order</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-prev"></i>
+                        </div>
+                        <div class="grids-txt">prev</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-play"></i>
+                        </div>
+                        <div class="grids-txt">play</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-next"></i>
+                        </div>
+                        <div class="grids-txt">next</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-good"></i>
+                        </div>
+                        <div class="grids-txt">good</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-bad"></i>
+                        </div>
+                        <div class="grids-txt">bad</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-feedback"></i>
+                        </div>
+                        <div class="grids-txt">feedback</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-compose"></i>
+                        </div>
+                        <div class="grids-txt">compose</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-discount"></i>
+                        </div>
+                        <div class="grids-txt">discount</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-verifycode"></i>
+                        </div>
+                        <div class="grids-txt">verifycode</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-download"></i>
+                        </div>
+                        <div class="grids-txt">download</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-footmark"></i>
+                        </div>
+                        <div class="grids-txt">footmark</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-refresh"></i>
+                        </div>
+                        <div class="grids-txt">refresh</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-search"></i>
+                        </div>
+                        <div class="grids-txt">search</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-time"></i>
+                        </div>
+                        <div class="grids-txt">time</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-setting"></i>
+                        </div>
+                        <div class="grids-txt">setting</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-delete"></i>
+                        </div>
+                        <div class="grids-txt">delete</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-more"></i>
+                        </div>
+                        <div class="grids-txt">more</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-checkoff"></i>
+                        </div>
+                        <div class="grids-txt">checkoff</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-video"></i>
+                        </div>
+                        <div class="grids-txt">video</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-clock"></i>
+                        </div>
+                        <div class="grids-txt">clock</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-type"></i>
+                        </div>
+                        <div class="grids-txt">type</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-discover"></i>
+                        </div>
+                        <div class="grids-txt">discover</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-qrscan"></i>
+                        </div>
+                        <div class="grids-txt">qrscan</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-location"></i>
+                        </div>
+                        <div class="grids-txt">location</div>
+                    </a>
+                    <a href="javascriopt:;" class="grids-item">
+                        <div class="grids-icon">
+                            <i class="icon-question"></i>
+                        </div>
+                        <div class="grids-txt">question</div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+
+<script src="../static/ydui.js"></script>
+
+</html>

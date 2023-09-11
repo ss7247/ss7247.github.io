@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+         <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+    <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="content-box" id="J_Content">
+            <h2>Dialog</h2>
+            <h3>1、说明</h3>
+            <h4>1.1、示例：<a class="demo-link" href="http://m.ydui.org/html/dialog.html" target="_blank">http://m.ydui.org/html/dialog.html</a></h4>
+            <h4>1.2、常见移动端弹窗提示框集合类；dialog包含五个方法：<span class="s-code">confim</span>、<span class="s-code">alert</span>、<span class="s-code">toast</span>、<span class="s-code">loading</span>、<span class="s-code">notify</span>，均位于window.YDUI.dialog下；</h4>
+            <div class="import-demo">
+                <pre class="pre"><code class="hljs javascript">console.log(YDUI.dialog);<br>// --------<br>{<br>    alert: function () { },<br>    configm: function () { },<br>    loading: {<br>        close: function () { },<br>        open: function () { }<br>    },<br>    toast: function () { },<br>    notify: function () { }<br>}</code></pre>
+            </div>
+            <h3>2、调用</h3>
+            <div class="fuck">
+                <div class="demo-box J_Demo">
+                    <div class="demo-content">
+                        <div class="content J_DemoContent"><strong><span>普通按钮（宽度自适应）</span></strong>
+                            <div class="demo">
+                                <div class="m-button">
+                                    <input type="button" class="btn-block btn-primary" id="J_Confirm" value="Confirm">
+                                    <input type="button" class="btn-block btn-primary" id="J_ConfirmCustom" value="Confirm-&gt;Custom">
+                                    <input type="button" class="btn-block btn-hollow" id="J_Alert" value="Alert">
+                                    <input type="button" class="btn-block btn-danger" id="J_ToastS" value="Toast-&gt;Success">
+                                    <input type="button" class="btn-block btn-danger" id="J_ToastE" value="Toast-&gt;Error">
+                                    <input type="button" class="btn-block btn-danger" id="J_ToastN" value="Toast-&gt;None">
+                                    <input type="button" class="btn-block btn-hollow" id="J_Loading" value="Loading">
+                                    <input type="button" class="btn-block btn-hollow" id="J_Notify" value="Notify">
+                                </div>
+                            </div>
+                            <div class="interpretation">
+                                <div>
+                                    <p>具体使用示例请参照对照右侧代码。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content J_DemoCode">
+                        <div>
+                            <pre class="pre"><code class="html hljs xml">&lt;div class="m-button"&gt;<br>    &lt;input type="button" class="btn-block btn-primary" id="J_Confirm" value="Confirm"/&gt;<br>    &lt;input type="button" class="btn-block btn-primary" id="J_ConfirmCustom" value="Confirm-&gt;Custom"/&gt;<br>    &lt;input type="button" class="btn-block btn-hollow" id="J_Alert" value="Alert"/&gt;<br>    &lt;input type="button" class="btn-block btn-danger" id="J_ToastS" value="Toast-&gt;Success"/&gt;<br>    &lt;input type="button" class="btn-block btn-danger" id="J_ToastE" value="Toast-&gt;Error"/&gt;<br>    &lt;input type="button" class="btn-block btn-danger" id="J_ToastN" value="Toast-&gt;None"/&gt;<br>    &lt;input type="button" class="btn-block btn-hollow" id="J_Loading" value="Loading"/&gt;<br>    &lt;input type="button" class="btn-block btn-hollow" id="J_Notify" value="Notify"/&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    !function (win, $) {<br>        var dialog = win.YDUI.dialog;<br><br>        /* 普通确认框 */<br>        $('#J_Confirm').on('click', function () {<br>            dialog.confirm('选填标题', '我有一个小毛驴我从来也不骑！', function () {<br>                dialog.toast('你点了确定', 'none', 1000);<br>            });<br>        });<br><br>        /* 自定义按钮确认框 */<br>        $('#J_ConfirmCustom').on('click', function () {<br>            dialog.confirm('自定义按钮', '我有一个小毛驴我从来也不骑！', [<br>                {<br>                    txt: '取消',<br>                    color: false, /* false:黑色  true:绿色 或 使用颜色值 */<br>                    callback: function () {<br>                        dialog.toast('你点了取消', 'none', 1000);<br>                    }<br>                },<br>                {<br>                    txt: '犹豫一下',<br>                    stay: true, /* 是否保留提示框 */<br>                    color: '#CCC', /* 使用颜色值 */<br>                    callback: function () {<br>                        dialog.toast('别犹豫了', 'none', 1000);<br>                    }<br>                },<br>                {<br>                    txt: '确定',<br>                    color: true,<br>                    callback: function () {<br>                        dialog.toast('你点了确定', 'none', 1000);<br>                    }<br>                }<br>            ]);<br>        });<br><br>        /* 普通提示框*/<br>        $('#J_Alert').on('click', function () {<br>            dialog.alert('消息一出，休想滚动屏幕【移动终端】！');<br>        });<br><br>        /* 正确提示框 */<br>        $('#J_ToastS').on('click', function () {<br>            dialog.toast('鼠标不错哟！', 'success', 1000);<br>        });<br><br>        /* 错误提示框 */<br>        $('#J_ToastE').on('click', function () {<br>            dialog.toast('别乱点啊！', 'error', 1000, function () {<br>                dialog.alert('给你一次重来的机会！');<br>            });<br>        });<br><br>        /* 不带图标提示框 */<br>        $('#J_ToastN').on('click', function () {<br>            dialog.toast('一个没有任何图标的提示！', 'none', 1000);<br>        });<br><br>        /* 加载中提示框 */<br>        $('#J_Loading').on('click', function () {<br>            dialog.loading.open('很快加载好了');<br>            setTimeout(function () {<br>                dialog.loading.close();/* 移除loading */<br>            }, 2000);<br>        });<br><br>        /* 顶部提示框 */<br>        $('#J_Notify').on('click', function () {<br>            dialog.notify('5秒后自动消失，点我也可以消失！', 5000, function(){<br>                console.log('我走咯！');<br>            });<br>        });<br>    }(window, jQuery);<br>&lt;/script&gt;</code></pre>
+                            <a href="javascript:;" class="show-more show J_DemoToggle"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>3、<strong>confim【确认提示框】</strong></h3>
+            <h4>3.1、说明：用于警示用户是否继续操作或选择操作方式；</h4>
+            <h4>3.2、使用：<span class="s-code">YDUI.dialog.confirm([title, ]mes, opts)</span>；</h4>
+            <div class="util-box">
+                <div class="help-con">
+                    <div class="help-fd">
+                        <div class="help-title">参数：【[title, ]mes, opts】</div>
+                        <div class="help-item"><span>title：</span>标题<em>【String】</em><i>可选</i></div>
+                        <div class="help-item"><span>mes：</span>提示信息<em>【String】</em><i>必填</i></div>
+                        <div class="help-item"><span>opts：</span>确定按钮回调函数<em>【Function】</em>或按钮们<em>【Array】</em><i>必填</i></div>
+                        <div class="help-item">
+                            按钮们【Array】：<br>
+                            [{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txt: String,&nbsp; <span style="color:#CCC;">//按钮文字</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: Boolean or String,&nbsp;<span style="color:#CCC;">//按钮颜色</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stay: Boolean,&nbsp; <span style="color:#CCC;">//是否保留提示框</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback: Function&nbsp; <span style="color:#CCC;">//按钮回调函数</span><br>
+                            }]<br>
+                        </div>
+                    </div>
+                    <pre style="border:1px solid #E2E2E2;"><code class="hljs javascript">/* 调用1： */<br>YDUI.dialog.confirm('标题来的',  '我有一个小毛驴我从来也不骑！',  function () {<br>    /* 确定后调用 */<br>});<br><br>/* 调用2： */<br>YDUI.dialog.confirm('自定义按钮',  '我有一个小毛驴我从来也不骑！',  [<br>    {<br>        txt: '取消',<br>        color: false, /* false:黑色 true:绿色 或 使用颜色值 */<br>        callback: function () { /* 按钮回调 */ }<br>    },<br>    {<br>        txt: '犹豫一下',<br>        stay: true, /* 是否保留提示框 */<br>        color: '#CCC', /* 使用颜色值 */<br>        callback: function () { /* 按钮回调 */ }<br>    },<br>    {<br>        txt: '确定',<br>        color: true,<br>        callback: function () { /* 按钮回调 */ }<br>    }<br>]);</code></pre>
+                   </div>
+            </div>
+            <h3>4、<strong>alert【普通提示框】</strong></h3>
+            <h4>4.1、说明：用于反馈简短信息，不会自动消失，需要用户手动点击确认；</h4>
+            <h4>4.2、使用：<span class="s-code">YDUI.dialog.alert(mes[, callback])</span>；</h4>
+            <div class="util-box">
+                <div class="help-con">
+                    <div class="help-fd">
+                        <div class="help-title">参数：【mes[, callback]】</div>
+                        <div class="help-item"><span>mes：</span>提示信息<em>【String】</em><i>必填</i></div>
+                        <div class="help-item"><span>callback：</span>回调函数<em>【Function】</em><i>可选</i></div>
+                    </div>
+                    <pre style="border:1px solid #E2E2E2;"><code class="hljs javascript">/* 调用1： */<br>YDUI.dialog.alert('我有一个小毛驴我从来也不骑！');<br><br>/* 调用2： */<br>YDUI.dialog.alert('我有一个小毛驴我从来也不骑！', function(){<br>    /* 关闭后调用 */<br>});</code></pre>
+                </div>
+            </div>
+            <h3>5、<strong>toast【结果提示框】</strong></h3>
+            <h4>5.1、说明：用于反馈处理结果提示框，N毫秒后自动消失；</h4>
+            <h4>5.2、使用：<span class="s-code">YDUI.dialog.toast(mes, type, timeout[, callback])</span>；</h4>
+            <div class="util-box">
+                <div class="help-con">
+                    <div class="help-fd">
+                        <div class="help-title">参数：【mes, type, timeout[, callback]】</div>
+                        <div class="help-item"><span>mes：</span>提示信息<em>【String】</em><i>必填</i></div>
+                        <div class="help-item"><span>type：</span>图标类型<em>【String】</em>【success或error或none】<i>必填</i></div>
+                        <div class="help-item"><span>timeout：</span>显示时长<em>【Number 毫秒】</em>【默认2000】<i>可选</i></div>
+                        <div class="help-item"><span>callback：</span>回调函数<em>【Function】</em><i>可选</i></div>
+                    </div>
+                    <pre style="border:1px solid #E2E2E2;"><code class="hljs javascript">/* 调用1(带时间)： */<br>YDUI.dialog.toast('鼠标不错哟', 'success', 5000, function () {<br>    /* 关闭后调用 */<br>});<br><br>/* 调用2(不带时间)： */<br>YDUI.dialog.toast('答错咯', 'error', function(){<br>    /* 关闭后调用 */<br>});<br><br>/* 调用3(不带图标)： */<br>YDUI.dialog.toast('一个没有任何图标的提示！', 'none', function(){<br>    /* 关闭后调用 */<br>});</code></pre>
+                </div>
+            </div>
+            <h3>6、<strong>loading【加载中提示框】</strong></h3>
+            <h4>6.1、说明：用于向服务端发送请求而等耗时操作的提示框，不会自动消失，需手动触发消失；</h4>
+            <p class="prams-box">通常在ajax发送前显示，ajax结束后隐藏；</p>
+            <h4>6.2、使用</h4>
+            <p class="prams-box">使用1：显示loading提示框：<span class="s-code">YDUI.dialog.loading.open([text])</span>；</p>
+            <p class="prams-box">使用2：关闭loading提示框：<span class="s-code">YDUI.dialog.loading.close()</span>；</p>
+            <div class="util-box">
+                <div class="help-con">
+                    <div class="help-fd">
+                        <div class="help-title">参数：【[text]】</div>
+                        <div class="help-item"><span>text：</span>显示文字<em>【String】</em>【默认：数据加载中】<i>可选</i></div>
+                    </div>
+                    <pre style="border:1px solid #E2E2E2;"><code class="hljs javascript">/* 调用：通常在ajax发送前显示，ajax结束后隐藏；*/<br><br>$('#DOM').on('click', function() {<br><br>    /* ajax发送前显示加载中提示 */<br>    YDUI.dialog.loading.open('很快加载好了');<br><br>    $.ajax({<br>        complete: function() {<br><br>            /* 结束后隐藏加载中提示 */<br>            YDUI.dialog.loading.close();<br>        }<br>    });<br>});</code></pre>
+                </div>
+            </div>
+            <h3>7、<strong>notify【顶部提示条】</strong></h3>
+            <h4>7.1、说明：用于提示用户相关信息，默认2000毫秒后自动消失，亦可点击使其消失；</h4>
+            <h4>7.2、使用：<span class="s-code">YDUI.dialog.notify(mes[, timeout, callback])</span>；</h4>
+            <div class="util-box">
+                <div class="help-con">
+                    <div class="help-fd">
+                        <div class="help-title">参数：【mes[, timeout, callback]】</div>
+                        <div class="help-item"><span>mes：</span>提示信息<em>【String】</em><i>必填</i></div>
+                        <div class="help-item"><span>timeout：</span>显示时长<em>【Number 毫秒】</em>【默认2000】<i>可选</i></div>
+                        <div class="help-item"><span>callback：</span>回调函数<em>【Function】</em><i>可选</i></div>
+                    </div>
+                    <pre style="border:1px solid #E2E2E2;"><code class="hljs javascript">YDUI.dialog.notify('5秒后自动消失，点我也可以消失！', 5000, function(){<br>    console.log('我走咯！');<br>});</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+
+
+<script src="../static/ydui.js"></script>
+
+
+<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+
+        //普通确认框
+        $('#J_Confirm').on('click', function () {
+            dialog.confirm('选填标题', '我有一个小毛驴我从来也不骑！', function () {
+                dialog.toast('你点了确定', 'none', 1000);
+            });
+        });
+
+        //自定义按钮确认框
+        $('#J_ConfirmCustom').on('click', function () {
+            dialog.confirm('自定义按钮', '我有一个小毛驴我从来也不骑！', [
+                {
+                    txt: '取消',
+                    color: false, //false:黑色  true:绿色 或 使用颜色值
+                    callback: function () {
+                        dialog.toast('你点了取消', 'none', 1000);
+                    }
+                },
+                {
+                    txt: '犹豫一下',
+                    stay: true, //是否保留提示框
+                    color: '#CCC', //使用颜色值
+                    callback: function () {
+                        dialog.toast('别犹豫了', 'none', 1000);
+                    }
+                },
+                {
+                    txt: '确定',
+                    color: true,
+                    callback: function () {
+                        dialog.toast('你点了确定', 'none', 1000);
+                    }
+                }
+            ]);
+        });
+
+        //普通提示框
+        $('#J_Alert').on('click', function () {
+            dialog.alert('消息一出，休想滚动屏幕【移动终端】！');
+        });
+
+        //正确提示框
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('鼠标不错哟！', 'success', 1000);
+        });
+
+        //错误提示框
+        $('#J_ToastE').on('click', function () {
+            dialog.toast('别乱点啊！', 'error', 1000, function () {
+                dialog.alert('给你一次重来的机会！');
+            });
+        });
+
+        //不带图标提示框
+        $('#J_ToastN').on('click', function () {
+            dialog.toast('一个没有任何图标的提示！', 'none', 1000);
+        });
+
+        //加载中提示框
+        $('#J_Loading').on('click', function () {
+            dialog.loading.open('很快加载好了');
+            setTimeout(function () {
+                dialog.loading.close();//移除loading
+            }, 2000);
+        });
+
+        // 顶部提示框
+        $('#J_Notify').on('click', function () {
+            dialog.notify('5秒后自动消失，点我也可以消失！', 5000, function(){
+                console.log('我走咯！');
+            });
+        });
+    }(window, jQuery);
+</script>
+
+</body></html>

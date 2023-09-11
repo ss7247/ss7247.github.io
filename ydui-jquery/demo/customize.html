@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+<html style="font-size: 56px;" data-dpr="1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YDUI Touch - 常见移动端弹窗提示框集合类</title>
+<meta name="description" content="">
+<meta name="keywords" content="YDUI,移动端,移动端UI,微信UI,移动端UI类库,移动端类库,移动端UI框架">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../static/docs.css"/>
+<script src="../static/jquery-3.1.1.min.js"></script>
+<script src="../static/ydui.flexible.js"></script>
+</head>
+
+<body>
+<section class="box">
+    <header class="header">
+    <div class="l">
+        <h1>YDUI Touch Docs <a href="./index.html">返回首页</a></h1>
+    </div>
+</header>
+
+     <section class="main">
+        <nav class="nav" id="J_Nav" style="position: relative;">
+    <dl>
+        <dt><em></em>高端定制</dt>
+        <dd><a href="./customize.html">YDUI Touch 定制</a></dd>
+        <dt><em></em>基本使用</dt>
+        <dd><a href="./docs.html">快速上手</a></dd>
+        <dt><em></em>布局组件</dt>
+        <dd><a href="./button.html">按钮<span>Button</span></a></dd>
+        <dd><a href="./cell.html">表单<span>Cell</span></a></dd>
+        <dd><a href="./icons.html">图标<span>Icons</span></a></dd>
+        <dd><a href="./list.html">列表<span>List</span></a></dd>
+        <dd><a href="./badge.html">角标<span>Badge</span></a></dd>
+        <dd><a href="./grids.html">网格<span>Grids</span></a></dd>
+        <dd><a href="./navbar.html">头部导航<span>NavBar</span></a></dd>
+        <dd><a href="./tabbar.html">底部导航<span>Tabbar</span></a></dd>
+        <dd><a href="./layout.html">布局<span>Layout</span></a></dd>
+        <dt><em></em>JS组件</dt>
+        <dd><a href="./dialog.html">提示框<span>Dialog</span></a></dd>
+        <dd><a href="./slider.html">图片轮播<span>Slider</span></a></dd>
+        <dd><a href="./progressbar.html">进度条<span>ProgressBar</span></a></dd>
+        <dd><a href="./actionsheet.html">上拉菜单<span>ActionSheet</span></a></dd>
+        <dd><a href="./tab.html">选项卡<span>Tab</span></a></dd>
+        <dd><a href="./scrolltab.html">滚动选项卡<span>ScrollTab</span></a></dd>
+        <dd><a href="./keyboard.html">安全键盘<span>KeyBoard</span></a></dd>
+        <dd><a href="./spinner.html">数字加减<span>Spinner</span></a></dd>
+        <dd><a href="./sendcode.html">发送验证码<span>SendCode</span></a></dd>
+        <dd><a href="./cityselect.html">省市县级联<span>CitySelect</span></a></dd>
+        <dd><a href="./infinitescroll.html">无限滚动加载<span>InfiniteScroll</span></a></dd>
+        <dd><a href="./pullrefresh.html">下拉刷新<span>PullRefresh</span></a></dd>
+        <dd><a href="./lazyload.html">图片延迟加载<span>LazyLoad</span></a></dd>
+        <dt><em></em>其他</dt>
+        <dd><a href="./flexible.html">rem 自适应类<span>ydui.flexible.js</span></a></dd>
+        <dd><a href="./util.html">工具方法集合<span>ydui.util.js</span></a></dd>
+        <dd><a href="./device.html">设备侦测<span>YDUI.device</span></a></dd>
+    </dl>
+</nav>
+
+        <div class="customize-content p-none" id="J_Content">
+            <div class="customize-head">
+    <strong>定制并下载 YDUI Touch</strong>
+    <p>通过自定义Javascript组件、Less文件、Less变量，定制一份属于自己的YDUI吧。</p>
+</div>
+            <div class="customize-download-box" id="J_DropBox">
+    <strong class="download-ico"></strong>
+    <div class="none-t">有现成的配置？上传并导入你的 <em>config.json</em> 文件。</div>
+    <div class="file-box">
+        <span>将文件拖拽到这里或者</span>
+        <label>手动上传<input type="file" id="J_File"/></label>。
+    </div>
+    <div class="a-tip">没有现成的配置文件？没关系，从下面开始自定义各字段吧。</div>
+</div>
+<div class="customize-upload-success-box" id="J_UploadSuccess">^_^ 配置已成功上传，接下来调整你的设置，然后点击“编译并下载”。<a href="javascript:;" id="J_Close"></a></div>
+            <h3 class="customize-title"><span class="customize-title-left">Rem 自适应类</span></h3>
+            <ul class="customize-grids rem clearfix">
+                
+                <li class="J_Flexible">
+                    <input name="flexible" checked type="radio" id="ydui.flexible" value="1"/>
+                    <label class="radio" for="ydui.flexible">ydui.flexible<em>(一点)</em></label>
+                </li>
+                
+                <li class="J_Flexible">
+                    <input name="flexible" disabled type="radio" id="taobao.flexible" value="0"/>
+                    <label class="radio" for="taobao.flexible">taobao.flexible<em>(淘宝)</em></label>
+                </li>
+                
+                <li class="J_Flexible">
+                    <input name="flexible" type="radio" id="other" value="-1"/>
+                    <label class="radio" for="other">other<em>(不使用rem，改用px)</em></label>
+                </li>
+                
+            </ul>
+
+            <h3 class="customize-title customize-flexstart"><span class="customize-title-left">Less文件</span><span class="customize-title-left">JavaScript</span></h3>
+            <div class="customize-hori">
+                <div class="hori-item">
+                    <ul class="customize-grids">
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="dialog" data-html="html/dialog.html" data-target="J_Dialog" value="page/dialog" checked/>
+                            <label for="dialog">dialog<em>(提示框)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="slider" data-html="html/slider.html" data-target="J_Slider" value="page/slider" checked/>
+                            <label for="slider">slider<em>(图片轮播)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="progressbar" data-html="html/progressbar.html" data-target="J_ProgressBar" value="page/progressbar" checked/>
+                            <label for="progressbar">progressbar<em>(进度条)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="actionsheet" data-html="html/actionsheet.html" data-target="J_ActionSheet" value="page/actionsheet" checked/>
+                            <label for="actionsheet">actionsheet<em>(上拉菜单)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="tab" data-html="html/tab.html" data-target="J_Tab" value="page/tab" checked/>
+                            <label for="tab">tab<em>(选项卡)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="scrolltab" data-html="html/scrolltab.html" data-target="J_ScrollTab" value="page/scrolltab" checked/>
+                            <label for="scrolltab">scrolltab<em>(滚动式选项卡)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="keyboard" data-html="html/keyboard.html" data-target="J_KeyBoard" value="page/keyboard" checked/>
+                            <label for="keyboard">keyboard<em>(六位密码安全键盘)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="cityselect" data-html="html/cityselect.html" data-target="J_CitySelect" value="page/cityselect" checked/>
+                            <label for="cityselect">cityselect<em>(省市县级联)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="spinner" data-html="html/spinner.html" data-target="J_Spinner" value="page/spinner" checked/>
+                            <label for="spinner">spinner<em>(数字加减)</em></label>
+                        </li>
+                        <li class="fuck-line"></li>
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="button" data-html="html/button.html" data-target="J_Button" value="page/button" checked/>
+                            <label for="button">button<em>(按钮)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="cell" data-html="html/cell.html" data-target="J_Cell" value="page/cell" checked/>
+                            <label for="cell">cell<em>(表单)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="icons" data-html="html/icons.html" data-target="J_Icons" value="page/icons" checked/>
+                            <label for="icons">icons<em>(图标)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="grids" data-html="html/grids.html" data-target="J_Grids" value="page/grids" checked/>
+                            <label for="grids">grids<em>(网格)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="list" data-html="html/list.html" data-target="J_List" value="page/list" checked/>
+                            <label for="list">list<em>(列表)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="badge" data-html="html/badge.html" data-target="J_Badge" value="page/badge" checked/>
+                            <label for="badge">badge<em>(角标)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="navbar" data-html="html/navbar.html" data-target="J_NavBar" value="page/navbar" checked/>
+                            <label for="navbar">navbar<em>(头部导航)</em></label>
+                        </li>
+                        
+                        
+                        <li>
+                            <input name="less" type="checkbox" id="tabbar" data-html="html/tabbar.html" data-target="J_TabBar" value="page/tabbar" checked/>
+                            <label for="tabbar">tabbar<em>(底部导航)</em></label>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="hori-item">
+                    <ul class="customize-grids">
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsDialog" value="js/source/ydui.dialog.js" checked/>
+                            <label for="J_JsDialog">ydui.dialog.js<em>(提示框)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsSlider" value="js/source/ydui.slider.js" checked/>
+                            <label for="J_JsSlider">ydui.slider.js<em>(图片轮播)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsProgressBar" value="js/source/ydui.progressbar.js" checked/>
+                            <label for="J_JsProgressBar">ydui.progressbar.js<em>(进度条)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsActionSheet" value="js/source/ydui.actionsheet.js" checked/>
+                            <label for="J_JsActionSheet">ydui.actionsheet.js<em>(上拉菜单)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsTab" value="js/source/ydui.tab.js" checked/>
+                            <label for="J_JsTab">ydui.tab.js<em>(选项卡)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsScrollTab" value="js/source/ydui.scrolltab.js" checked/>
+                            <label for="J_JsScrollTab">ydui.scrolltab.js<em>(滚动式选项卡)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsKeyBoard" value="js/source/ydui.keyboard.js" checked/>
+                            <label for="J_JsKeyBoard">ydui.keyboard.js<em>(六位密码安全键盘)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsCitySelect" value="js/source/ydui.cityselect.js" checked/>
+                            <label for="J_JsCitySelect">ydui.cityselect.js<em>(省市县级联)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsSpinner" value="js/source/ydui.spinner.js" checked/>
+                            <label for="J_JsSpinner">ydui.spinner.js<em>(数字加减)</em></label>
+                        </li>
+                        <li class="fuck-line"></li>
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsSendCode" value="js/source/ydui.sendcode.js" checked/>
+                            <label for="J_JsSendCode">ydui.sendcode.js<em>(发送验证码倒计时)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="3" id="J_JsInfiniteScroll" value="js/source/ydui.infinitescroll.js" checked/>
+                            <label for="J_JsInfiniteScroll">ydui.infinitescroll.js<em>(无限滚动加载)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="3" id="J_JsPullrefresh" value="js/source/ydui.pullrefresh.js" checked/>
+                            <label for="J_JsPullrefresh">ydui.pullrefresh.js<em>(下拉刷新)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="3" id="J_JsLazyLoad" value="js/source/ydui.lazyload.js" checked/>
+                            <label for="J_JsLazyLoad">ydui.lazyload.js<em>(图片延迟加载)</em></label>
+                        </li>
+                        
+                        <li class="fuck-line"></li>
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsUtil" value="js/source/ydui.util.js" checked/>
+                            <label for="J_JsUtil">ydui.util.js<em>(工具方法集合)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="2" id="J_JsDevice" value="js/source/ydui.device.js" checked disabled/>
+                            <label for="J_JsDevice">ydui.device.js<em>(设备侦测)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="99" id="J_JsFastclick" value="js/source/ydui.fastclick.js" checked disabled/>
+                            <label for="J_JsFastclick">ydui.fastclick.js<em>(解决点击300ms延迟)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="2" id="J_JsActive" value="js/source/ydui.active.js" checked disabled/>
+                            <label for="J_JsActive">ydui.active.js<em>(使用伪类:active)</em></label>
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <input name="js" type="checkbox" data-sort="1" id="J_JsYDUI" value="js/source/ydui.js" checked disabled/>
+                            <label for="J_JsYDUI">ydui.js<em>(主文件)</em></label>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="customize-title">
+                <span class="customize-title-left">Less变量<em id="J_LTip">(rem计算方式：设计图尺寸px / 100 = 实际rem&nbsp;&nbsp;例: 100px = 1rem)</em></span>
+                <span class="customize-title-right"><a href="javascript:;" id="J_DevelopAll" data-open="0">[展开全部]</a></span>
+            </h3>
+            
+            
+            <div class="customize-lessvars show" id="J_Global">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">Global</span>
+                        <span class="tg-fu-title">(全局)</span>
+                        
+                        
+                    </div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix show">
+                    
+                    <li>
+                        <div class="J_Vars">@base-zindex</div>
+                        <div><input autocomplete="off" readonly type="text" name="vars" data-var="@base-zindex" data-regular="anynumber" value="1" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">z-index基数(无需修改)</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@body-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@body-bg" data-regular="color" value="#F5F5F5" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">body的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@body-padding-vertical</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@body-padding-vertical" data-regular="size" value=".24rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">body两侧的内边距</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@body-padding-bottom</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@body-padding-bottom" data-regular="size" value=".5rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">body的下内边距</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@line-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@line-color" data-regular="color" value="#D9D9D9" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">内容里面的边框颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@line-high-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@line-high-color" data-regular="color" value="#B2B2B2" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">内容外边框的边框颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@max-width</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@max-width" data-regular="px" value="750px" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">body的最大宽</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@min-width</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@min-width" data-regular="px" value="320px" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">body的最小宽</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_Button">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">Button</span>
+                        <span class="tg-fu-title">(按钮)</span>
+                        
+                        <a href="javascript:;" tabindex="-1" class="help-link J_ReView" data-title="Button" data-img="http://static.ydcss.com/ydui/img/review/button.jpg">需要帮助？</a>
+                        
+                        
+                        <div class="customize-tip-box" id="J_TipLessBox">
+                            <span class="arrow"></span>
+                            <div class="tip-hd">点击标题「显示/隐藏」所有变量哦！</div>
+                            <div class="tip-ft">
+                                <a href="javascript:;" id="J_TipCloseBtn">知道了</a>
+                                <a href="javascript:;" id="J_TipNaverBtn">别再烦我</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/button.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@btn-radius</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-radius" data-regular="px" value="3px" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">小按钮的圆角角度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-fontsize" data-regular="fontsize" value=".26rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">小按钮文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-height" data-regular="size" value=".7rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">小按钮的高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-default-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-default-color" data-regular="color" value="#FFF" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">默认按钮的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-block-radius</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-block-radius" data-regular="px" value="3px" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">块级按钮的圆角角度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-block-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-block-fontsize" data-regular="fontsize" value=".36rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">块级按钮的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-block-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-block-height" data-regular="size" value="1rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">块级按钮的高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-block-margin-top</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-block-margin-top" data-regular="size" value=".5rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">块级按钮的上外边距</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-primary-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-primary-bg" data-regular="color" value="#04BE02" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">primary按钮的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-danger-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-danger-bg" data-regular="color" value="#EF4F4F" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">danger按钮的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-warning-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-warning-bg" data-regular="color" value="#FFB400" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">warning按钮的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-disabled-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-disabled-bg" data-regular="color" value="#CCC" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">禁用按钮的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-disabled-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-disabled-color" data-regular="color" value="#F0F0F0" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">禁用按钮的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-hollow-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-hollow-bg" data-regular="color" value="#FFF" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">hollow按钮的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@btn-hollow-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@btn-hollow-color" data-regular="color" value="#454545" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">hollow按钮的字体颜色</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_Cell">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">Cell</span>
+                        <span class="tg-fu-title">(表单)</span>
+                        
+                        <a href="javascript:;" tabindex="-1" class="help-link J_ReView" data-title="Cell" data-img="http://static.ydcss.com/ydui/img/review/cell.jpg">需要帮助？</a>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/cell.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@cell-title-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-title-fontsize" data-regular="fontsize" value=".3rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell标题的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-title-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-title-color" data-regular="color" value="#888" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell标题的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-height" data-regular="size" value="1rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell每行的高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-left-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-left-color" data-regular="color" value="#333" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell左边内容的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-left-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-left-fontsize" data-regular="fontsize" value=".3rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell左边内容的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-right-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-right-color" data-regular="color" value="#525252" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell右边内容的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-right-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-right-fontsize" data-regular="fontsize" value=".26rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">cell右边内容的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-input-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-input-color" data-regular="color" value="#555" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">文本框的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-input-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-input-fontsize" data-regular="fontsize" value=".3rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">文本框的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-icon-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-icon-fontsize" data-regular="fontsize" value=".42rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">图标(字体图标)的大小</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-select-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-select-color" data-regular="color" value="#A9A9A9" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">下拉框的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-select-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-select-fontsize" data-regular="fontsize" value="@cell-left-fontsize" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">下拉框的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-arrow-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-arrow-color" data-regular="color" value="#C9C9C9" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">右箭头的颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@cell-arrow-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@cell-arrow-fontsize" data-regular="fontsize" value=".34rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">右箭头的大小</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_Grids">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">Grids</span>
+                        <span class="tg-fu-title">(网格)</span>
+                        
+                        <a href="javascript:;" tabindex="-1" class="help-link J_ReView" data-title="Grids" data-img="http://static.ydcss.com/ydui/img/review/grids.jpg">需要帮助？</a>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/grids.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@grids-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@grids-fontsize" data-regular="fontsize" value=".28rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">网格的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@grids-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@grids-color" data-regular="color" value="#333" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">网格的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@grids-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@grids-bg" data-regular="color" value="#FFF" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">网格的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@grids-padding-horizontal</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@grids-padding-horizontal" data-regular="size" value=".32rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">网格的上下内边距</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@grids-line-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@grids-line-color" data-regular="color" value="@line-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">网格内容里的边框颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@grids-line-high-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@grids-line-high-color" data-regular="color" value="@line-high-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">网格的底边颜色</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_NavBar">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">NavBar</span>
+                        <span class="tg-fu-title">(顶部导航)</span>
+                        
+                        <a href="javascript:;" tabindex="-1" class="help-link J_ReView" data-title="NavBar" data-img="http://static.ydcss.com/ydui/img/review/navbar.jpg">需要帮助？</a>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/tabbar.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-height" data-regular="size" value=".9rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航的高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-bg" data-regular="color" value="rgba(255, 255, 255, .98)" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-center-width</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-center-width" data-regular="cent" value="50%" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航中间部分所占比例</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-center-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-center-fontsize" data-regular="fontsize" value=".4rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">导航中间内容的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-center-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-center-color" data-regular="color" value="#5C5C5C" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">导航中间内容的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-item-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-item-fontsize" data-regular="fontsize" value=".3rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航两边内容的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-item-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-item-color" data-regular="color" value="#5C5C5C" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航两侧内容的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-icon-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-icon-color" data-regular="color" value="@navbar-item-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航图标的颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-icon-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-icon-fontsize" data-regular="fontsize" value=".36rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航图标的大小</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@navbar-border-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@navbar-border-color" data-regular="color" value="#B2B2B2" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">顶部导航的下边框颜色</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_TabBar">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">TabBar</span>
+                        <span class="tg-fu-title">(底部导航)</span>
+                        
+                        <a href="javascript:;" tabindex="-1" class="help-link J_ReView" data-title="TabBar" data-img="http://static.ydcss.com/ydui/img/review/tabbar.jpg">需要帮助？</a>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/tabbar.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-bg" data-regular="color" value="rgba(255, 255, 255, .96)" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-border-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-border-color" data-regular="color" value="#B2B2B2" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航的上边框颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-color" data-regular="color" value="#979797" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航文字的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-color-active</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-color-active" data-regular="color" value="#09BB07" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航选中时的字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-text-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-text-fontsize" data-regular="fontsize" value=".24rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航的文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-icon-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-icon-color" data-regular="color" value="@tabbar-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航的图标颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tabbar-icon-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tabbar-icon-fontsize" data-regular="fontsize" value=".54rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">底部导航的图标大小</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_ActionSheet">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">ActionSheet</span>
+                        <span class="tg-fu-title">(上拉菜单)</span>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/actionsheet.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-bg" data-regular="color" value="#EFEFF4" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">actionsheet背景色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-item-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-item-height" data-regular="size" value="1rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">主体部分每行内容的高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-item-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-item-bg" data-regular="color" value="#FFF" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">主体部分背景色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-item-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-item-fontsize" data-regular="fontsize" value=".28rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">主体部分文字字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-item-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-item-color" data-regular="color" value="#555" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">主体部分文字颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-item-border-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-item-border-color" data-regular="color" value="@line-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">主体部分每行边框颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-action-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-action-height" data-regular="size" value="1rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">操作按钮的高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-action-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-action-bg" data-regular="color" value="@actionsheet-item-bg" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">操作按钮的背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-action-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-action-fontsize" data-regular="fontsize" value="@actionsheet-item-fontsize" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">操作按钮的字体字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@actionsheet-action-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@actionsheet-action-color" data-regular="color" value="@actionsheet-item-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">操作按钮的字体颜色</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_Tab">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">Tab</span>
+                        <span class="tg-fu-title">(选项卡)</span>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/tab.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@tab-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-bg" data-regular="color" value="#FFF" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tab-height</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-height" data-regular="size" value=".85rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡高度</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tab-fontsize</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-fontsize" data-regular="fontsize" value=".28rem" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡字体字号</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tab-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-color" data-regular="color" value="#585858" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tab-color-crt</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-color-crt" data-regular="color" value="#FF5E53" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡选中字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tab-break-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-break-color" data-regular="color" value="@line-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡分隔符颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@tab-bottom-border-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@tab-bottom-border-color" data-regular="color" value="@line-high-color" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">选项卡底边颜色</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="customize-lessvars" id="J_Badge">
+                <h4 class="lessvars-title">
+                    <div class="lessvars-title-left">
+                        <span class="tg-title J_TgTitle">Badge</span>
+                        <span class="tg-fu-title">(角标)</span>
+                        
+                        
+                    </div>
+                    
+                    <div class="lessvars-title-right"><a target="_blank" href="http://m.ydui.org/html/badge.html">查看示例</a></div>
+                    
+                </h4>
+                <ul class="customize-grids clearfix">
+                    
+                    <li>
+                        <div class="J_Vars">@badge-default-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-default-bg" data-regular="color" value="#D0D0D0" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">默认角标背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@badge-default-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-default-color" data-regular="color" value="#333" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">默认角标字体颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@badge-primary-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-primary-bg" data-regular="color" value="#04BE02" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">primary 角标背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@badge-danger-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-danger-bg" data-regular="color" value="#EF4F4F" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">danger 角标背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@badge-warning-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-warning-bg" data-regular="color" value="#FFB400" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">warning 角标背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@badge-hollow-bg</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-hollow-bg" data-regular="color" value="#F7F7F7" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">hollow 角标背景颜色</div>
+                    </li>
+                    
+                    <li>
+                        <div class="J_Vars">@badge-hollow-color</div>
+                        <div><input autocomplete="off" type="text" name="vars" data-var="@badge-hollow-color" data-regular="color" value="#454545" placeholder=""/></div>
+                        <div class="fly-tip J_FlyTip">hollow 角标字体颜色</div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+
+            <h3 class="customize-title"><span class="customize-title-left">下载</span></h3>
+            <div class="customize-box">
+                <h4 class="lessvars-title">恭喜！你的专属YDUI即将大功告成。只要点击下面的按钮就可以下载了。</h4>
+                <button type="button" class="customize-btn" id="J_Btn">编译并下载</button>
+                <input type="hidden" value="http://static.ydcss.com/" id="J_StaticUrl"/>
+                <div class="duoshuo">
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="J_Version" value="0.1.3">
+    </section>
+</section>
+<a id="J_BackTop" href="javascript:;" class="back-top"></a>
+
+<script src="../static/ydui.js"></script>
+
+
+</html>
