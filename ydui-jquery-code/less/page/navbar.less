@@ -1,0 +1,72 @@
+.m-navbar {
+  height: @navbar-height;
+  position: relative;
+  display: flex;
+  background-color: @navbar-bg;
+  &:after {
+    .bottom-line(@navbar-border-color, 2);
+  }
+  &.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: @base-zindex * 100;
+  }
+}
+
+.navbar-item {
+  height: @navbar-height;
+  min-width: (100% - @navbar-center-width) / 2; /* for low version android */
+  flex: 0 0 (100% - @navbar-center-width) / 2;
+  padding: 0 @body-padding-vertical / 1.2;
+  display: flex;
+  align-items: center;
+  font-size: @navbar-item-fontsize;
+  white-space: nowrap;
+  overflow: hidden;
+  color: @navbar-item-color;
+  &:first-child {
+    order: 1;
+    margin-right: -(100% - @navbar-center-width) / 2;
+  }
+  &:last-child {
+    order: 3;
+    justify-content: flex-end;
+  }
+  .back-ico:before, .next-ico:before {
+    display: block;
+    font-family: @iconfont-inlay;
+    font-size: @navbar-icon-fontsize;
+    color: @navbar-icon-color;
+  }
+  .back-ico:before {
+    content: '\e607';
+  }
+  .next-ico:before {
+    content: '\e608';
+  }
+}
+
+.navbar-center {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: @navbar-height;
+  width: @navbar-center-width;
+  margin-left: (100% - @navbar-center-width) / 2;
+  .navbar-title {
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    font-size: @navbar-center-fontsize;
+    color: @navbar-center-color;
+  }
+  > img {
+    height: 60%;
+  }
+}

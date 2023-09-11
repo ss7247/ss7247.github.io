@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dialog</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../css/demo.css"/>
+    <script src="../js/ydui.flexible.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">Dialog</span></div>
+    </header>
+
+    <section class="g-scrollview">
+
+        <div class="m-button">
+            <input type="button" class="btn-block btn-primary" id="J_Confirm" value="Confirm"/>
+            <input type="button" class="btn-block btn-primary" id="J_ConfirmCustom" value="Confirm->Custom"/>
+            <input type="button" class="btn-block btn-hollow" id="J_Alert" value="Alert"/>
+            <input type="button" class="btn-block btn-danger" id="J_ToastS" value="Toast->Success"/>
+            <input type="button" class="btn-block btn-danger" id="J_ToastE" value="Toast->Error"/>
+            <input type="button" class="btn-block btn-danger" id="J_ToastN" value="Toast->None"/>
+            <input type="button" class="btn-block btn-hollow" id="J_Loading" value="Loading"/>
+            <input type="button" class="btn-block btn-hollow" id="J_Notify" value="Notify"/>
+        </div>
+
+    </section>
+
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/ydui.js"></script>
+<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+
+        //普通确认框
+        $('#J_Confirm').on('click', function () {
+            dialog.confirm('选填标题', '我有一个小毛驴我从来也不骑！', function () {
+                dialog.toast('你点了确定', 'none', 1000);
+            });
+        });
+
+        //自定义按钮确认框
+        $('#J_ConfirmCustom').on('click', function () {
+            dialog.confirm('自定义按钮', '我有一个小毛驴我从来也不骑！', [
+                {
+                    txt: '取消',
+                    color: false, //false:黑色  true:绿色 或 使用颜色值
+                    callback: function () {
+                        dialog.toast('你点了取消', 'none', 1000);
+                    }
+                },
+                {
+                    txt: '犹豫一下',
+                    stay: true, //是否保留提示框
+                    color: '#CCC', //使用颜色值
+                    callback: function () {
+                        dialog.toast('别犹豫了', 'none', 1000);
+                    }
+                },
+                {
+                    txt: '确定',
+                    color: true,
+                    callback: function () {
+                        dialog.toast('你点了确定', 'none', 1000);
+                    }
+                }
+            ]);
+        });
+
+        //普通提示框
+        $('#J_Alert').on('click', function () {
+            dialog.alert('消息一出，休想滚动屏幕【移动终端】！');
+        });
+
+        //正确提示框
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('鼠标不错哟！', 'success', 1000);
+        });
+
+        //错误提示框
+        $('#J_ToastE').on('click', function () {
+            dialog.toast('别乱点啊！', 'error', 1000, function () {
+                dialog.alert('给你一次重来的机会！');
+            });
+        });
+
+        //不带图标提示框
+        $('#J_ToastN').on('click', function () {
+            dialog.toast('一个没有任何图标的提示！', 'none', 1000);
+        });
+
+        //加载中提示框
+        $('#J_Loading').on('click', function () {
+            dialog.loading.open('很快加载好了');
+            setTimeout(function () {
+                dialog.loading.close();//移除loading
+            }, 2000);
+        });
+
+        // 顶部提示框
+        $('#J_Notify').on('click', function () {
+            dialog.notify('5秒后自动消失，点我也可以消失！', 5000, function(){
+                console.log('我走咯！');
+            });
+        });
+    }(window, jQuery);
+</script>
+</body>
+</html>

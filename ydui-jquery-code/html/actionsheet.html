@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ActionSheet</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../css/demo.css"/>
+    <script src="../js/ydui.flexible.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">ActionSheet</span></div>
+    </header>
+
+    <section class="g-scrollview">
+
+        <aside class="demo-tip">
+            <p>Data API 和 Javascript API方式都包含以下两个自定义事件：</p>
+            <p>1. [open.ydui.actionsheet]：打开ActionSheet时立即触发</p>
+            <p>2. [close.ydui.actionsheet]：关闭ActionSheet时立即触发</p>
+        </aside>
+
+        <div class="m-button">
+            <button type="button" class="btn-block btn-primary" data-ydui-actionsheet="{target:'#actionSheet',closeElement:'#cancel'}">ActionSheet(Data API调用)</button>
+            <button type="button" class="btn-block btn-warning" id="J_ShowActionSheet">ActionSheet(Javascript API调用)</button>
+        </div>
+
+        <div class="m-actionsheet" id="actionSheet">
+            <a href="#" class="actionsheet-item">示例菜单 - Data API</a>
+            <a href="#" class="actionsheet-item">示例菜单 - Data API</a>
+            <a href="#" class="actionsheet-item">示例菜单 - Data API</a>
+            <a href="#" class="actionsheet-item">示例菜单 - Data API</a>
+            <a href="javascript:;" class="actionsheet-action" id="cancel">取消</a>
+        </div>
+
+        <div class="m-actionsheet" id="J_ActionSheet">
+            <a href="#" class="actionsheet-item">示例菜单 - Javascript API</a>
+            <a href="#" class="actionsheet-item">示例菜单 - Javascript API</a>
+            <a href="#" class="actionsheet-item">示例菜单 - Javascript API</a>
+            <a href="#" class="actionsheet-item">示例菜单 - Javascript API</a>
+            <a href="javascript:;" class="actionsheet-action" id="J_Cancel">取消</a>
+        </div>
+
+    </section>
+
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/ydui.js"></script>
+<script>
+    /**
+     * Javascript API调用ActionSheet
+     */
+    !function ($) {
+        var $myAs = $('#J_ActionSheet');
+
+        $('#J_ShowActionSheet').on('click', function () {
+            $myAs.actionSheet('open');
+        });
+
+        $('#J_Cancel').on('click', function () {
+            $myAs.actionSheet('close');
+        });
+
+        // 自定义事件
+        $myAs.on('open.ydui.actionsheet', function () {
+            console.log('打开了');
+        }).on('close.ydui.actionsheet', function () {
+            console.log('关闭了');
+        });
+    }(jQuery);
+</script>
+</body>
+</html>

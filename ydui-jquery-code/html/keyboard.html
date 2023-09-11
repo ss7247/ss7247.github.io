@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>KeyBoard</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../css/demo.css"/>
+    <script src="../js/ydui.flexible.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">KeyBoard</span></div>
+    </header>
+
+    <section class="g-scrollview">
+
+        <aside class="demo-tip">
+            <p>该插件暂不支持Data API方式调用，Javascript API方式包含下列方法和事件：</p>
+            <p>1. [open]：打开键盘方法</p>
+            <p>2. [close]：关闭键盘方法</p>
+            <p>3. [done.ydui.keyboard]：六位密码输入完毕后执行</p>
+        </aside>
+
+        <div class="m-button demo-pitch">
+            <a href="javascript:;" class="btn-block btn-primary" id="J_OpenKeyBoard">打开</a>
+        </div>
+
+        <div class="m-keyboard" id="J_KeyBoard">
+            <!-- 自定义内容区域 -->
+            <div style="text-align: right;padding: .15rem .8rem 0;"><a href="http://www.ydui.org" style="color: #666;font-size: .24rem;">忘记密码</a></div>
+            <!-- 自定义内容区域 -->
+        </div>
+
+    </section>
+
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/ydui.js"></script>
+<script>
+    !function ($, ydui) {
+
+        var dialog = ydui.dialog;
+
+        var $keyboard = $('#J_KeyBoard');
+
+        // 初始化参数
+        $keyboard.keyBoard({
+            disorder: false, // 是否打乱数字顺序
+            title: 'YDUI安全键盘' // 显示标题
+        });
+
+        // 打开键盘
+        $('#J_OpenKeyBoard').on('click', function () {
+            $keyboard.keyBoard('open');
+        });
+
+        // 六位密码输入完毕后执行
+        $keyboard.on('done.ydui.keyboard', function (ret) {
+
+            console.log('输入的密码是：' + ret.password);
+
+            // 弹出请求中提示框
+            dialog.loading.open('验证支付密码');
+
+            // 模拟AJAX校验密码
+            setTimeout(function () {
+                // 关闭请求中提示框
+                dialog.loading.close();
+
+                // 显示错误信息
+                $keyboard.keyBoard('error', '对不起，您的支付密码不正确，请重新输入。');
+            }, 1500);
+
+            // 关闭键盘
+            // $keyboard.keyBoard('close');
+        });
+
+    }(jQuery, YDUI);
+</script>
+</body>
+</html>

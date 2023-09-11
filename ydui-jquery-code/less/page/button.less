@@ -1,0 +1,81 @@
+.m-button {
+  padding: 0 @body-padding-vertical;
+}
+
+.btn-variant() {
+  text-align: center;
+  position: relative;
+  border: none;
+  pointer-events: auto;
+}
+
+.btn {
+  .btn-variant();
+  height: @btn-height;
+  line-height: @btn-height;
+  font-size: @btn-fontsize;
+  display: inline-block;
+  padding: 0 .2rem;
+  border-radius: @btn-radius;
+}
+
+.btn-block {
+  .btn-variant();
+  width: 100%;
+  display: block;
+  font-size: @btn-block-fontsize;
+  height: @btn-block-height;
+  line-height: @btn-block-height;
+  margin-top: @btn-block-margin-top;
+  border-radius: @btn-block-radius;
+}
+
+.btn-primary {
+  .tap-color(@btn-primary-bg);
+  color: @btn-default-color;
+}
+
+.btn-danger {
+  .tap-color(@btn-danger-bg);
+  color: @btn-default-color;
+}
+
+.btn-warning {
+  .tap-color(@btn-warning-bg);
+  color: @btn-default-color;
+}
+
+.btn-disabled {
+  .tap-color(@btn-disabled-bg);
+  color: @btn-disabled-color;
+  pointer-events: none;
+}
+
+.btn-hollow {
+  .tap-color(@btn-hollow-bg, .9);
+  color: @btn-hollow-color;
+  &:after {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(.5);
+    transform-origin: 0 0;
+    border: 1px solid @line-color;
+    border-radius: @btn-block-radius * 2;
+  }
+}
+
+input[type="button"].btn-hollow,
+input[type="submit"].btn-hollow {
+  border: 1px solid @line-color;
+}
+
+.hairline {
+  input[type="button"].btn-hollow,
+  input[type="submit"].btn-hollow {
+    border: .5px solid @line-high-color;
+  }
+}

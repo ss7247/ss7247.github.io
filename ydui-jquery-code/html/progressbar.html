@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ProgressBar</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../css/demo.css"/>
+    <script src="../js/ydui.flexible.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">ProgressBar</span></div>
+    </header>
+
+    <section class="g-scrollview" id="J_ProgressBox">
+
+        <aside class="demo-tip">
+            <p>1. ProgressBar 支持Data API 和 Javascript API方式调用；</p>
+            <p>2. 采用SVG方式实现，宽高占满父级容器；</p>
+        </aside>
+
+        <div class="demo-progressbar demo-small-pitch">
+            <div class="demo-progress-cricle">
+                <!-- 代码部分start -->
+                <div class="progress-bar" data-ydui-progressbar="{type: 'cricle', strokeWidth: 4, progress: .1, binder: '#J_ProgressBox'}">
+                    <div class="progressbar-content">10%</div>
+                </div>
+                <!-- 代码部分end -->
+            </div>
+            <div class="demo-progress-cricle">
+                <!-- 代码部分start -->
+                <div class="progress-bar demo-progress-cricle" id="J_Progress">
+                    <div class="progressbar-content">40%</div>
+                </div>
+                <!-- 代码部分end -->
+            </div>
+        </div>
+        <div class="demo-progressbar demo-small-pitch">
+            <div class="demo-progressbar-item">
+                <!-- 代码部分start -->
+                <div class="progress-bar demo-progress-line" data-ydui-progressbar="{type: 'line', strokeWidth: 4, progress: .4, trailColor: '#FE5D51', binder: '#J_ProgressBox'}"></div>
+                <!-- 代码部分end -->
+            </div>
+        </div>
+
+        <div class="m-button">
+            <a href="javascript:;" id="J_Set" class="btn-block btn-hollow">手动设置右圈为80%</a>
+        </div>
+
+    </section>
+
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/ydui.js"></script>
+<script>
+    /**
+     * Javascript API调用ActionSheet
+     */
+    !function($){
+        $('#J_Progress').progressBar({
+            type: 'circle',
+            strokeWidth: 2,
+            strokeColor: '#B2B2B2',
+            trailWidth: 5,
+            trailColor: '#FE5D51',
+            fill: '#FFF',
+            progress: .4,
+            binder: '#J_ProgressBox'
+        });
+
+        $('#J_Set').on('click', function () {
+            // 手动设置进度为80%
+            $('#J_Progress').progressBar('set', .8);
+        });
+
+    }(jQuery);
+</script>
+</body>
+</html>

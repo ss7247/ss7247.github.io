@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SendCode</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../css/demo.css"/>
+    <script src="../js/ydui.flexible.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="../index.html" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">SendCode</span></div>
+    </header>
+
+    <section class="g-scrollview">
+
+        <aside class="demo-tip">
+            SendCode 仅支持Javascript API方式调用，需手动触发【发送事件】。
+        </aside>
+
+        <div class="m-cell">
+            <div class="cell-item">
+                <div class="cell-left"><i class="cell-icon demo-icons-phone"></i></div>
+                <div class="cell-right">
+                    <input type="number" pattern="[0-9]*" class="cell-input" placeholder="请输入手机号码" autocomplete="off" />
+                    <a href="javascript:;" class="btn btn-warning" id="J_GetCode">获取短信验证码</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/ydui.js"></script>
+<script>
+    !function (win, $) {
+
+        var dialog = win.YDUI.dialog;
+
+        var $getCode = $('#J_GetCode');
+
+        // 定义参数
+        $getCode.sendCode({
+            disClass: 'btn-disabled', // 禁用按钮样式【必填】
+            secs: 15, // 倒计时时长 [可选，默认：60秒]
+            run: false,// 是否初始化自动运行 [可选，默认：false]
+            runStr: '{%s}秒后重新获取',// 倒计时显示文本 [可选，默认：58秒后重新获取]
+            resetStr: '重新获取验证码'// 倒计时结束后按钮显示文本 [可选，默认：重新获取验证码]
+        });
+
+        $getCode.on('click', function () {
+            var $this = $(this);
+            dialog.loading.open('发送中...');
+            // ajax 成功发送验证码后调用【start】
+            setTimeout(function () { //模拟ajax发送
+                dialog.loading.close();
+                $this.sendCode('start');
+                dialog.toast('已发送', 'success', 1500);
+            }, 800);
+        });
+
+    }(window, jQuery);
+</script>
+</body>
+</html>

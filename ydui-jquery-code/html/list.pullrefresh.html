@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pull Refresh</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="../css/ydui.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../css/demo.css"/>
+    <script src="../js/ydui.flexible.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="list.html" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">Pull Refresh</span></div>
+    </header>
+
+    <aside class="demo-tip">
+        <p>1. 示例请使手机或浏览器切换手机模式(后刷新)查看</p>
+        <p>2. 考虑到移动设备的整体性能，不直接拖动整个列表</p>
+    </aside>
+
+    <section class="g-scrollview">
+        <div id="J_ListContent" class="m-list list-theme4"></div>
+    </section>
+
+</section>
+<script id="J_ListHtml" type="text/html">
+    {{each list as data}}
+    <a href="#" class="list-item">
+        <div class="list-img">
+            <img src="{{data.img}}">
+        </div>
+        <div class="list-mes">
+            <h3 class="list-title">{{data.title}}</h3>
+            <div class="list-mes-item">
+                <div>
+                    <span class="list-price"><em>¥</em>{{data.marketprice}}</span>
+                    <span class="list-del-price">¥{{data.productprice}}</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    {{/each}}
+</script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://static.ydcss.com/libs/arttemplate/template.js"></script>
+<script src="../js/ydui.js"></script>
+<script>
+    !function () {
+
+        // 根据需求自定义获取数据方法
+        var page = 1;
+        var loadMore = function (callback) {
+            $.ajax({
+                url: 'http://list.ydui.org/getdata.php?type=pulldown&page=' + page,
+                dataType: 'jsonp',
+                success: function (ret) {
+                    if (ret) {
+                        // 该示例使用了arttemplate模板引擎，当然你也可以用其他方式
+                        $('#J_ListContent').prepend(template('J_ListHtml', {list: ret}));
+
+                        var tipStr = ret.length > 0 ? '为您更新了' + ret.length + '条内容' : '已是最新内容';
+
+                        ++page;
+
+                        YDUI.dialog.toast(tipStr, 'none', 1500);
+                    }
+                },
+                complete: function () {
+                    typeof callback == 'function' && callback();
+                }
+            });
+        };
+
+        $('#J_ListContent').pullRefresh({
+            loadListFn: function () {
+                var def = $.Deferred();
+
+                loadMore(function () {
+                    def.resolve();
+                });
+
+                return def.promise();
+            }
+        });
+    }();
+</script>
+</body>
+</html>
